@@ -15,15 +15,19 @@
   - Uses `docker ps` commands to the docker daemon and pulls status and details of containers managed by the daemon.
   - The `server` part mocks an actual docker daemon running and pushes generated data randomly to the `browser` component written in `ReactJS` using `CommonJS` modules.
   - Implemented it using `reactJS` in mostly JSX files and grunt tasks to compile to JS.
-  - A `DaemonService` written in NodeJS runs in the background collecting information in almost realtime using a simple short polling mechanism
+  - A `DaemonService` written in NodeJS runs in the background collecting information from the docker daemon every 30 seconds using a simple short polling mechanism
 
 ----
 
 ***Build a project with a dockerfile. Put the container on the Hub so we can pull and run it.***
 
- - Built a project that can run the above two projects.
- - Dependencies: `GHC(Haskell)`, `Purescript`, `QuickCheck`, `NodeJS`, `Bower`, `Grunt`,`ReactJS`
-
+  - Built a project that can run the above two projects.
+  - Dependencies:
+  		`docker.io`
+  		`ghc (Haskell Platform)`
+  		`git`
+  		`nodejs`
+  		`npm`
 ----
 
 ***What piece of tech (programming language, framework, paper, etc) excites you the most right now? Why?***
