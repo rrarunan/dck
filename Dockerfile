@@ -6,6 +6,7 @@ MAINTAINER Arunan Rabindran <r.arunan@gmail.com>
 RUN apt-get update && apt-get install -y \
 	docker.io \
 	haskell-platform \
+	libncurses5-dev \
 	git \
 	nodejs \
 	npm
@@ -18,9 +19,10 @@ COPY . /docker
 
 # Download dependent libraries to environment
 RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN cd /docker/gcd ; npm install ; npm install -g bower ; bower install --allow-root
+RUN cabal update ; cabal install cabal-install ; cabal install purescript
+RUN npm install -g bower ; npm install -g grunt ; npm install -g grunt-cli
+RUN cd /docker/gcd ; npm install ; bower install --allow-root
 RUN cd /docker/containerViz ; npm install ; bower install --allow-root
 
-# Run the programs
-CMD [./gcd/grunt]
-CMD [./containerViz/grunt]
+# To run programs: Please start container in /bin/bash -t -i mode and cd into /docker
+# For both `gcd` & `containerViz` do: `grunt`
