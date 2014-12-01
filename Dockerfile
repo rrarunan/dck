@@ -14,11 +14,12 @@ RUN apt-get update && apt-get install -y \
 COPY . /docker
 
 # Expose ports: 9001 and 3000 for the servers
-EXPOSE [9001 3000]
+# EXPOSE [9001 3000]
 
 # Download dependent libraries to environment
-RUN cd /gcd; npm install; bower install
-RUN cd /containerViz; npm install; bower install
+RUN ln -s /usr/bin/nodejs /usr/bin/node
+RUN cd /docker/gcd ; npm install ; npm install -g bower ; bower install --allow-root
+RUN cd /docker/containerViz ; npm install ; bower install --allow-root
 
 # Run the programs
 CMD [./gcd/grunt]
