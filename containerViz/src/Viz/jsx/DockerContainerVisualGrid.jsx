@@ -7,8 +7,7 @@ module.exports = React.createClass({
   render: function() {
     var containerNodes = this.props.data.map(function(dockerContainer) {
       return (
-        <DockerContainer name={dockerContainer.names}>
-          Status: {dockerContainer.status}
+        <DockerContainer name={dockerContainer.names} status={dockerContainer.status}>
         </DockerContainer>
       );
     });

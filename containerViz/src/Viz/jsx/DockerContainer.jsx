@@ -6,7 +6,8 @@ module.exports = React.createClass({
   render: function() {
     return(
       <li className="dockerContainer">
-        {this.props.name}
+        <div className="containerName containerItem">{this.props.name}</div><br/>
+        <div className="containerStatus containerItem">{this.props.status}</div>
       </li>
     );
   }

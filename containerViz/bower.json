@@ -22,10 +22,14 @@
     "purescript-foldable-traversable": "*",
     "purescript-react": "~0.0.5",
     "react": "~0.12.1",
-    "normalize.css": "~3.0.2"
+    "normalize.css": "~3.0.2",
+    "react-addons": "~0.1.2"
   },
   "devDependencies": {
     "purescript-math": "*",
     "purescript-quickcheck": "*"
+  },
+  "resolutions": {
+    "react": "~0.11.1"
   }
 }
