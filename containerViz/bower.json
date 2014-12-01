@@ -1,0 +1,31 @@
+{
+  "name": "containerViz",
+  "description": "Visualizing Container(s) Status, Configuration",
+  "keywords": [
+    "purescript"
+  ],
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "tests",
+    "js",
+    "tmp",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "purescript-arrays": "*",
+    "purescript-maybe": "*",
+    "purescript-foldable-traversable": "*",
+    "purescript-react": "~0.0.5",
+    "react": "~0.12.1",
+    "normalize.css": "~3.0.2"
+  },
+  "devDependencies": {
+    "purescript-math": "*",
+    "purescript-quickcheck": "*"
+  }
+}

@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+/*ul user-agent style - webkit padding start is set to 40px for some reason*/
+ul {
+  -webkit-padding-start: 0px;
+}
+
+.containerGroup {
+  padding: 10px 5px 10px 5px;
+}
+
+.containerBox {
+  background-color: #eee;
+  margin: 2px 2px 2px 2px;
+  width: 120px;
+  height: 120px;
+}
