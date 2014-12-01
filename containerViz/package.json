@@ -9,6 +9,9 @@
   "dependencies": {
     "browserify": "^6.3.3",
     "byline": "^4.1.1",
+    "express": "^4.10.4",
+    "grunt-bg-shell": "^2.3.1",
+    "grunt-connect-socket.io": "^0.7.1",
     "react": "^0.12.1",
     "shelljs": "^0.3.0",
     "underscore": "^1.7.0"

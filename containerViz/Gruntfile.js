@@ -65,9 +65,20 @@ module.exports = function(grunt) {
         src: ['src/**/*.jsx'],
         dest: 'dist/app.built.js'
       }
+    },
+
+    bgShell: {
+      _defaults: {
+        bg: false
+      },
+      runDaemonService: {
+        cmd: 'node src/Viz/js/DaemonService.js',
+        bg: true
+      }
     }
   });
 
+  grunt.loadNpmTasks('grunt-bg-shell');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks("grunt-contrib-connect");
   grunt.loadNpmTasks("grunt-contrib-copy");
@@ -76,8 +87,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-execute");
   grunt.loadNpmTasks("grunt-purescript");
 
-  grunt.registerTask("test", ["pscMake:tests", "copy", "execute:tests"]);
-  grunt.registerTask("make", ["pscMake:lib", "dotPsci"]);
   grunt.registerTask("serve", ["connect"]);
-  grunt.registerTask("default", ["clean", "browserify", "watch"]);
+  grunt.registerTask("default", [
+    "clean",
+    "browserify",
+    "bgShell:runDaemonService",
+    "serve"
+  ]);
 };

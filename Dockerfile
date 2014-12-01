@@ -6,3 +6,10 @@ RUN apt-get update && apt-get install -y \
 	git \
 	nodejs \
 	npm
+
+COPY . /docker
+
+EXPOSE 9001
+
+RUN cd /gcd; npm install; bower install
+RUN cd /containerViz; npm install; bower install

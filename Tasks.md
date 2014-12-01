@@ -12,18 +12,16 @@
 ***Create a React Component in a CommonJS module. Explain how you thought about the creation of the component.***
 
   - A component to show a list of running containers in the browser.
-  - Uses `docker ps` and `docker inspect` commands to the docker daemon and pulls status and details of containers managed by the daemon.
+  - Uses `docker ps` commands to the docker daemon and pulls status and details of containers managed by the daemon.
   - The `server` part mocks an actual docker daemon running and pushes generated data randomly to the `browser` component written in `ReactJS` using `CommonJS` modules.
-  - Started by visualizing the component in my head, designing data-driven interactions and made some sketches on paper.
-  - Used `Sketch` to prototype the actual component, designed on paper.
-  - Implemented it using `reactJS` and tested inputs using `QuickCheck` and `Purescript`.
-  - Again, decided to use `Purescript`, since I felt it was easier to do it using `purescript-react` bindings.
+  - Implemented it using `reactJS` in mostly JSX files and grunt tasks to compile to JS.
+  - A `DaemonService` written in NodeJS runs in the background collecting information in almost realtime using a simple short polling mechanism
 
 ----
 
 ***Build a project with a dockerfile. Put the container on the Hub so we can pull and run it.***
 
- - Decided to build a project that can run the above two projects.
+ - Built a project that can run the above two projects.
  - Dependencies: `GHC(Haskell)`, `Purescript`, `QuickCheck`, `NodeJS`, `Bower`, `Grunt`,`ReactJS`
 
 ----
